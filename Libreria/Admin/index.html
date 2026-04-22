@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Librería – Dashboard Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/admin.css"/>
+</head>
+<body>
+
+<div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>Librería</h1>
+                <span>Admin Panel</span>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">A</div>
+                <div class="info">
+                    <p class="name">Perfil 1</p>
+                    <p class="role">Administrador</p>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <p class="menu-label">PRINCIPAL</p>
+                <ul>
+                    <li class="active"><i class="ph ph-squares-four"></i> Dashboard</li>
+                    <li><i class="ph ph-books"></i> Productos</li>
+                    <li><i class="ph ph-tag"></i> Categorías</li>
+                </ul>
+
+                <p class="menu-label">COMERCIAL</p>
+                <ul>
+                    <li><i class="ph ph-receipt"></i> Ventas</li>
+                    <li><i class="ph ph-users"></i> Clientes</li>
+                    <li><i class="ph ph-chart-bar"></i> Reportes</li>
+                </ul>
+
+                <p class="menu-label">SISTEMA</p>
+                <ul>
+                    <li><i class="ph ph-user-gear"></i> Usuarios</li>
+                    <li><i class="ph ph-gear"></i> Configuración</li>
+                </ul>
+            </nav>
+
+            <div class="logout">
+                <i class="ph ph-sign-out"></i> Cerrar sesión
+            </div>
+        </aside>
+
+        <main class="content">
+            
+            <header class="main-header">
+                <div class="breadcrumb">Dashboard / Resumen general</div>
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar productos, clientes...">
+                </div>
+                <button class="btn-primary">+ Nueva venta</button>
+            </header>
+
+            <section class="overview">
+                <h2>Dashboard</h2>
+                <p class="subtitle">Resumen general de la librería</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Ventas Hoy</h3>
+                        <div class="divider"></div>
+                        <p class="no-data">Sin datos aún</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Ingresos</h3>
+                        <div class="divider"></div>
+                        <p class="no-data">Sin datos aún</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Clientes</h3>
+                        <div class="divider"></div>
+                        <p class="no-data">Sin datos aún</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Productos</h3>
+                        <div class="divider"></div>
+                        <p class="no-data">Sin datos aún</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <div class="recent-sales card">
+                    <h3>Últimas ventas</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CLIENTE</th>
+                                <th>LIBRO</th>
+                                <th>TOTAL</th>
+                                <th>ESTADO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td><span class="status paid">Pagado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recent-activity card">
+                    <h3>Actividad reciente</h3>
+                    <ul>
+                        <li>Sin actividad registrada</li>
+                        <li>Sin actividad registrada</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html> 

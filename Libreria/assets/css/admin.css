@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fondo muy oscuro para el contenido */
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex; /* Esto pone el sidebar y el contenido uno al lado del otro */
+    width: 100%;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #1a1a1a; /* Un gris un poco más claro que el fondo */
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza los bloques de arriba a abajo */
+    border-right: 1px solid #333; /* Línea separadora sutil */
+    flex-shrink: 0; /* Evita que el menú se aplaste */
+}
+
+/* Marca y Perfil */
+.brand h1 {
+    font-family: 'Playfair Display', serif; /* La fuente serif para el logo */
+    font-size: 24px;
+    color: white;
+}
+.brand span {
+    font-size: 12px;
+    color: #888;
+}
+
+.user-profile {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.name { color: white; font-weight: 500; }
+.role { font-size: 12px; color: #888; }
+
+.menu ul li {
+    margin-bottom: 5px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* EFECTO HOVER */
+.menu ul li:hover {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* ITEM ACTIVO */
+.menu ul li.active {
+    background-color: #333;
+    color: white;
+    font-weight: 500;
+}
+.logout {
+    margin-top: auto; /* Empuja el botón al final del sidebar */
+    color: #ff6b6b; /* Color rojo sutil para cerrar sesión */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+.content {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    padding: 40px;
+    background-color: #121212;
+}
+
+/* Header Superior */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    background-color: #1a1a1a; /* fondo tipo tarjeta */
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* efecto profundidad */
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px 10px 45px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-primary:hover {
+    background-color: #444;
+}
+
+/* Sección Overview */
+.overview h2 { color: white; margin-bottom: 5px; }
+.subtitle { color: #888; margin-bottom: 30px; }
+
+/* La Grilla de Tarjetas (CSS Grid) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+.stat-card h3 { font-size: 14px; color: #888; margin-bottom: 15px; }
+.divider { height: 1px; background-color: #333; margin: 15px 0; }
+.no-data { color: #666; font-style: italic; font-size: 14px; }
+
+/* Sección Inferior de Detalles */
+.details-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* La tabla es más ancha que la actividad */
+    gap: 30px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+.card h3 { color: white; margin-bottom: 20px; }
+
+/* Tabla de Ventas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th { text-align: left; color: #666; font-size: 12px; padding: 10px 0; }
+td { color: #b3b3b3; padding: 15px 0; border-top: 1px solid #2a2a2a; }
+
+/* Estados de Venta (Badges) */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.status.pending { 
+    background-color: #332b1a; 
+    color: #f39c12; 
+}
+
+.status.paid { 
+    background-color: #1e3a2a; 
+    color: #2ecc71; 
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity ul li {
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #b3b3b3;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: background 0.2s;
+}
+
+/* Hover */
+.recent-activity ul li:hover {
+    background-color: #1f1f1f;
+}

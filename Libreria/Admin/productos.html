@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="content">
+    <header class="main-header">
+        <div class="breadcrumb">Dashboard / Productos</div>
+        <div class="search-bar">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por nombre, autor o ISBN...">
+        </div>
+        <button class="btn-primary">+ Agregar Producto</button>
+    </header>
+
+    <section class="inventory-section">
+        <div class="card">
+            <div class="card-header">
+                <h2>Inventario de Libros</h2>
+                <div class="filters">
+                    <span>Filtrar por:</span>
+                    <select>
+                        <option>Todas las categorías</option>
+                        <option>Novela</option>
+                        <option>Educación</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>TÍTULO</th>
+                        <th>AUTOR</th>
+                        <th>STOCK</th>
+                        <th>PRECIO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#B-1024</td>
+                        <td>El Principito</td>
+                        <td>Antoine de Saint-Exupéry</td>
+                        <td><span class="stock-badge low">5 unidades</span></td>
+                        <td>$12.50</td>
+                        <td>
+                            <button class="btn-icon"><i class="ph ph-pencil"></i></button>
+                            <button class="btn-icon"><i class="ph ph-trash"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+</body>
+</html>
