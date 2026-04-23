@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprenta e Imagina – Clientes</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/clientes.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div class="brand-text">
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="../index.html"            class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+      <a href="productos.html"           class="nav-item"><span class="nav-icon"></span> Productos</a>
+      <a href="clientes.html"            class="nav-item active"><span class="nav-icon"></span> Clientes</a>
+      <a href="ventas.html"              class="nav-item"><span class="nav-icon"></span> Ventas</a>
+      <a href="reportes.html"            class="nav-item"><span class="nav-icon"></span> Reportes</a>
+      <a href="inventario.html"          class="nav-item"><span class="nav-icon"></span> Inventario</a>
+      <a href="configuracion.html"       class="nav-item"><span class="nav-icon"></span> Configuración</a>
+    </nav>
+
+    <div class="sidebar-quick">
+      <p class="quick-title">Accesos rápidos</p>
+      <a href="productos.html" class="quick-link"><span></span> Nuevo producto</a>
+      <a href="#" class="quick-link"><span></span> Categorías</a>
+      <a href="#" class="quick-link"><span></span> Proveedores</a>
+      <a href="#" class="quick-link"><span></span> Importar productos</a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="brand-icon"></div>
+      <div>
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería</span>
+      </div>
+    </div>
+    <p class="sidebar-copy">© 2025 Todos los derechos reservados</p>
+  </aside>
+
+  <!-- ═══════════════════ MAIN ═══════════════════ -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="page-title">
+        <span class="page-title-icon"></span>
+        <div>
+          <h1>Clientes</h1>
+          <p>Gestión de clientes y contactos</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="notif-btn"> <span class="badge">3</span></button>
+        <div class="admin-info">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Admin</strong>
+            <span>Administrador</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon blue"></div>
+        <div class="stat-body">
+          <p class="stat-label">Total clientes</p>
+          <strong class="stat-value">127</strong>
+          <span class="stat-sub">Registrados en el sistema</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"></div>
+        <div class="stat-body">
+          <p class="stat-label">Activos</p>
+          <strong class="stat-value">98</strong>
+          <span class="stat-sub">Con compras recientes</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon yellow"></div>
+        <div class="stat-body">
+          <p class="stat-label">Nuevos este mes</p>
+          <strong class="stat-value">12</strong>
+          <span class="stat-sub">Registros en abril</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red"></div>
+        <div class="stat-body">
+          <p class="stat-label">Inactivos</p>
+          <strong class="stat-value">17</strong>
+          <span class="stat-sub">Sin compras en 60 días</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon"></span>
+        <input type="text" placeholder="Buscar cliente por nombre, DNI o correo..." />
+      </div>
+      <button class="btn-filter"> Filtros</button>
+      <button class="btn-primary">＋ Nuevo cliente</button>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active">Todos <span class="tab-count">127</span></button>
+      <button class="tab">Activos <span class="tab-count">98</span></button>
+      <button class="tab">Inactivos <span class="tab-count">17</span></button>
+      <button class="tab">Nuevos <span class="tab-count">12</span></button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>DNI / RUC</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Compras</th>
+            <th>Total gastado</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#3b82f6">M</div>
+                <div>
+                  <strong>María García</strong>
+                  <span class="sub-text">Registrado: 10/01/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">45782341</td>
+            <td>987 654 321</td>
+            <td class="col-email">maria@email.com</td>
+            <td>24</td>
+            <td><strong>S/ 480.00</strong></td>
+            <td><span class="status status-green">Activo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view" title="Ver perfil"></button>
+                <button class="act-btn edit" title="Editar"></button>
+                <button class="act-btn del"  title="Eliminar"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#a855f7">C</div>
+                <div>
+                  <strong>Carlos Ruiz</strong>
+                  <span class="sub-text">Registrado: 15/01/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">38291047</td>
+            <td>956 123 789</td>
+            <td class="col-email">carlos@email.com</td>
+            <td>18</td>
+            <td><strong>S/ 312.50</strong></td>
+            <td><span class="status status-green">Activo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#f59e0b">L</div>
+                <div>
+                  <strong>Lucía Torres</strong>
+                  <span class="sub-text">Registrado: 02/02/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">72901834</td>
+            <td>945 678 012</td>
+            <td class="col-email">lucia@email.com</td>
+            <td>7</td>
+            <td><strong>S/ 95.00</strong></td>
+            <td><span class="status status-yellow">Pendiente</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#22c55e">R</div>
+                <div>
+                  <strong>Roberto Silva</strong>
+                  <span class="sub-text">Registrado: 20/02/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">61038274</td>
+            <td>912 345 678</td>
+            <td class="col-email">roberto@email.com</td>
+            <td>31</td>
+            <td><strong>S/ 720.00</strong></td>
+            <td><span class="status status-green">Activo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#ef4444">A</div>
+                <div>
+                  <strong>Ana Paredes</strong>
+                  <span class="sub-text">Registrado: 05/03/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">53827104</td>
+            <td>998 001 234</td>
+            <td class="col-email">ana@email.com</td>
+            <td>3</td>
+            <td><strong>S/ 42.00</strong></td>
+            <td><span class="status status-red">Inactivo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#0ea5e9">J</div>
+                <div>
+                  <strong>Jorge Mendoza</strong>
+                  <span class="sub-text">Registrado: 12/03/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">20482736191</td>
+            <td>974 852 963</td>
+            <td class="col-email">jorge@empresa.com</td>
+            <td>45</td>
+            <td><strong>S/ 1,850.00</strong></td>
+            <td><span class="status status-green">Activo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#14b8a6">S</div>
+                <div>
+                  <strong>Sofía Castro</strong>
+                  <span class="sub-text">Registrado: 01/04/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">48291736</td>
+            <td>961 753 840</td>
+            <td class="col-email">sofia@email.com</td>
+            <td>2</td>
+            <td><strong>S/ 28.50</strong></td>
+            <td><span class="status status-green">Activo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="client-cell">
+                <div class="client-avatar" style="background:#f97316">P</div>
+                <div>
+                  <strong>Pedro Alvarado</strong>
+                  <span class="sub-text">Registrado: 10/04/2025</span>
+                </div>
+              </div>
+            </td>
+            <td class="col-code">67192038</td>
+            <td>933 416 285</td>
+            <td class="col-email">pedro@email.com</td>
+            <td>0</td>
+            <td><strong>S/ 0.00</strong></td>
+            <td><span class="status status-gray">Nuevo</span></td>
+            <td>
+              <div class="actions">
+                <button class="act-btn view"></button>
+                <button class="act-btn edit"></button>
+                <button class="act-btn del"></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <span class="pag-info">Mostrando 1 a 8 de 127 clientes</span>
+      <div class="pag-controls">
+        <button class="pag-btn">‹</button>
+        <button class="pag-btn active">1</button>
+        <button class="pag-btn">2</button>
+        <button class="pag-btn">3</button>
+        <button class="pag-btn">…</button>
+        <button class="pag-btn">16</button>
+        <button class="pag-btn">›</button>
+      </div>
+      <div class="pag-size">
+        <select>
+          <option>8 por página</option>
+          <option>16 por página</option>
+          <option>32 por página</option>
+        </select>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

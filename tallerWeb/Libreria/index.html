@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprenta e Imagina – Dashboard</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/pages/dashboard.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div class="brand-text">
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="index.html"             class="nav-item active"><span class="nav-icon"></span> Dashboard</a>
+      <a href="pages/productos.html"   class="nav-item"><span class="nav-icon"></span> Productos</a>
+      <a href="pages/clientes.html"    class="nav-item"><span class="nav-icon"></span> Clientes</a>
+      <a href="pages/ventas.html"      class="nav-item"><span class="nav-icon"></span> Ventas</a>
+      <a href="pages/reportes.html"    class="nav-item"><span class="nav-icon"></span> Reportes</a>
+      <a href="pages/inventario.html"  class="nav-item"><span class="nav-icon"></span> Inventario</a>
+      <a href="pages/configuracion.html" class="nav-item"><span class="nav-icon"></span> Configuración</a>
+    </nav>
+
+    <div class="sidebar-quick">
+      <p class="quick-title">Accesos rápidos</p>
+      <a href="pages/productos.html" class="quick-link"><span>＋</span> Nuevo producto</a>
+      <a href="#" class="quick-link"><span></span> Categorías</a>
+      <a href="#" class="quick-link"><span></span> Proveedores</a>
+      <a href="#" class="quick-link"><span>⬆</span> Importar productos</a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="brand-icon"></div>
+      <div>
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+    <p class="sidebar-copy">© 2025 Todos los derechos reservados</p>
+  </aside>
+
+  <!-- ═══════════════════ MAIN ═══════════════════ -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="page-title">
+        <span class="page-title-icon"></span>
+        <div>
+          <h1>Dashboard</h1>
+          <p>Resumen general del negocio</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="date-badge"> Abril 2025</div>
+        <button class="notif-btn"> <span class="badge">3</span></button>
+        <div class="admin-info">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Admin</strong>
+            <span>Administrador</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BIENVENIDA -->
+    <div class="welcome-banner">
+      <div class="welcome-text">
+        <h2>¡Buenos días, Admin! </h2>
+        <p>Aquí tienes un resumen de cómo va el negocio hoy.</p>
+      </div>
+      <div class="welcome-actions">
+        <a href="pages/ventas.html" class="btn-primary"> Nueva venta</a>
+        <a href="pages/reportes.html" class="btn-secondary btn-primary"> Ver reportes</a>
+      </div>
+    </div>
+
+    <!-- STATS PRINCIPALES -->
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon blue"></div>
+        <div class="stat-body">
+          <p class="stat-label">Ventas hoy</p>
+          <strong class="stat-value">S/ 1,240</strong>
+          <span class="stat-trend up">↑ 12% vs ayer</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"></div>
+        <div class="stat-body">
+          <p class="stat-label">Pedidos del mes</p>
+          <strong class="stat-value">384</strong>
+          <span class="stat-trend up">↑ 8% vs mes anterior</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon yellow"></div>
+        <div class="stat-body">
+          <p class="stat-label">Clientes activos</p>
+          <strong class="stat-value">127</strong>
+          <span class="stat-trend up">↑ 5 nuevos esta semana</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red"></div>
+        <div class="stat-body">
+          <p class="stat-label">Productos sin stock</p>
+          <strong class="stat-value">28</strong>
+          <span class="stat-trend down">↓ Requieren reposición</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILA CENTRAL: Ventas recientes + Actividad -->
+    <div class="dash-grid">
+
+      <!-- Ventas recientes -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-title">Ventas recientes</p>
+            <p class="card-subtitle">Últimas transacciones del día</p>
+          </div>
+          <a href="pages/ventas.html" class="card-link">Ver todas →</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Productos</th>
+                <th>Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#3b82f6">M</div>
+                    <div>
+                      <strong>María García</strong>
+                      <span class="sub-text">hace 10 min</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Cuadernos x3, Lapiceros x5</td>
+                <td><strong>S/ 29.50</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#a855f7">C</div>
+                    <div>
+                      <strong>Carlos Ruiz</strong>
+                      <span class="sub-text">hace 42 min</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Resmas A4 x2, Folder x10</td>
+                <td><strong>S/ 45.00</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#f59e0b">L</div>
+                    <div>
+                      <strong>Lucía Torres</strong>
+                      <span class="sub-text">hace 1 hora</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Impresión A4 x50</td>
+                <td><strong>S/ 15.00</strong></td>
+                <td><span class="status status-yellow">Pendiente</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#22c55e">R</div>
+                    <div>
+                      <strong>Roberto Silva</strong>
+                      <span class="sub-text">hace 2 horas</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Engrapadora x1, Goma x2</td>
+                <td><strong>S/ 21.00</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#ef4444">A</div>
+                    <div>
+                      <strong>Ana Paredes</strong>
+                      <span class="sub-text">hace 3 horas</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Cuaderno espiral x2</td>
+                <td><strong>S/ 11.00</strong></td>
+                <td><span class="status status-red">Cancelado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel derecho -->
+      <div class="dash-right">
+
+        <!-- Resumen de inventario -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Estado del inventario</p>
+              <p class="card-subtitle">248 productos en total</p>
+            </div>
+            <a href="pages/inventario.html" class="card-link">Ver →</a>
+          </div>
+          <div class="inv-bars">
+            <div class="inv-bar-item">
+              <div class="inv-bar-label">
+                <span>En stock</span>
+                <strong>192</strong>
+              </div>
+              <div class="inv-bar-track">
+                <div class="inv-bar-fill green" style="width: 77%"></div>
+              </div>
+            </div>
+            <div class="inv-bar-item">
+              <div class="inv-bar-label">
+                <span>Stock bajo</span>
+                <strong>28</strong>
+              </div>
+              <div class="inv-bar-track">
+                <div class="inv-bar-fill yellow" style="width: 11%"></div>
+              </div>
+            </div>
+            <div class="inv-bar-item">
+              <div class="inv-bar-label">
+                <span>Sin stock</span>
+                <strong>28</strong>
+              </div>
+              <div class="inv-bar-track">
+                <div class="inv-bar-fill red" style="width: 11%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Productos con stock bajo -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Stock bajo</p>
+              <p class="card-subtitle">Requieren reposición pronto</p>
+            </div>
+            <a href="pages/productos.html" class="card-link">Ver →</a>
+          </div>
+          <div class="low-stock-list">
+            <div class="low-stock-item">
+              <span class="cell-thumb"></span>
+              <div class="low-stock-info">
+                <strong>Resaltador fluorescente</strong>
+                <span>Escritura</span>
+              </div>
+              <span class="low-stock-qty yellow-text">15 uds</span>
+            </div>
+            <div class="low-stock-item">
+              <span class="cell-thumb"></span>
+              <div class="low-stock-info">
+                <strong>Engrapador metálico</strong>
+                <span>Oficina</span>
+              </div>
+              <span class="low-stock-qty yellow-text">8 uds</span>
+            </div>
+            <div class="low-stock-item">
+              <span class="cell-thumb"></span>
+              <div class="low-stock-info">
+                <strong>Folder manila</strong>
+                <span>Oficina</span>
+              </div>
+              <span class="low-stock-qty yellow-text">30 uds</span>
+            </div>
+            <div class="low-stock-item">
+              <span class="cell-thumb"></span>
+              <div class="low-stock-info">
+                <strong>Hojas bond A4</strong>
+                <span>Papel</span>
+              </div>
+              <span class="low-stock-qty red-text">0 uds</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.dash-right -->
+    </div><!-- /.dash-grid -->
+
+    <!-- FILA INFERIOR: Accesos rápidos + Top productos -->
+    <div class="dash-grid-bottom">
+
+      <!-- Accesos rápidos -->
+      <div class="card">
+        <div class="card-header">
+          <p class="card-title">Accesos rápidos</p>
+        </div>
+        <div class="quick-actions-grid">
+          <a href="pages/ventas.html" class="quick-action-card blue">
+            <span class="qa-icon"></span>
+            <span>Nueva venta</span>
+          </a>
+          <a href="pages/productos.html" class="quick-action-card green">
+            <span class="qa-icon"></span>
+            <span>Nuevo producto</span>
+          </a>
+          <a href="pages/clientes.html" class="quick-action-card purple">
+            <span class="qa-icon"></span>
+            <span>Nuevo cliente</span>
+          </a>
+          <a href="pages/reportes.html" class="quick-action-card yellow">
+            <span class="qa-icon"></span>
+            <span>Ver reportes</span>
+          </a>
+          <a href="pages/inventario.html" class="quick-action-card red">
+            <span class="qa-icon"></span>
+            <span>Inventario</span>
+          </a>
+          <a href="pages/configuracion.html" class="quick-action-card gray">
+            <span class="qa-icon"></span>
+            <span>Configuración</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Top productos -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-title">Top productos</p>
+            <p class="card-subtitle">Más vendidos este mes</p>
+          </div>
+          <a href="pages/reportes.html" class="card-link">Ver reporte →</a>
+        </div>
+        <div class="top-products">
+          <div class="top-product-item">
+            <span class="top-rank">1</span>
+            <span class="cell-thumb"></span>
+            <div class="top-product-info">
+              <strong>Cuaderno universitario</strong>
+              <div class="top-bar-track">
+                <div class="top-bar-fill" style="width:88%"></div>
+              </div>
+            </div>
+            <span class="top-qty">248 uds</span>
+          </div>
+          <div class="top-product-item">
+            <span class="top-rank">2</span>
+            <span class="cell-thumb"></span>
+            <div class="top-product-info">
+              <strong>Lapicero azul</strong>
+              <div class="top-bar-track">
+                <div class="top-bar-fill" style="width:72%"></div>
+              </div>
+            </div>
+            <span class="top-qty">202 uds</span>
+          </div>
+          <div class="top-product-item">
+            <span class="top-rank">3</span>
+            <span class="cell-thumb"></span>
+            <div class="top-product-info">
+              <strong>Hojas bond A4 (500)</strong>
+              <div class="top-bar-track">
+                <div class="top-bar-fill" style="width:58%"></div>
+              </div>
+            </div>
+            <span class="top-qty">163 uds</span>
+          </div>
+          <div class="top-product-item">
+            <span class="top-rank">4</span>
+            <span class="cell-thumb"></span>
+            <div class="top-product-info">
+              <strong>Resaltador fluorescente</strong>
+              <div class="top-bar-track">
+                <div class="top-bar-fill" style="width:44%"></div>
+              </div>
+            </div>
+            <span class="top-qty">124 uds</span>
+          </div>
+          <div class="top-product-item">
+            <span class="top-rank">5</span>
+            <span class="cell-thumb"></span>
+            <div class="top-product-info">
+              <strong>Goma líquida 250ml</strong>
+              <div class="top-bar-track">
+                <div class="top-bar-fill" style="width:30%"></div>
+              </div>
+            </div>
+            <span class="top-qty">85 uds</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clientes recientes -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-title">Clientes recientes</p>
+            <p class="card-subtitle">Nuevos registros</p>
+          </div>
+          <a href="pages/clientes.html" class="card-link">Ver todos →</a>
+        </div>
+        <div class="recent-clients">
+          <div class="recent-client-item">
+            <div class="client-avatar" style="background:#3b82f6">M</div>
+            <div class="recent-client-info">
+              <strong>María García</strong>
+              <span>maria@email.com</span>
+            </div>
+            <span class="tag tag-green">Activo</span>
+          </div>
+          <div class="recent-client-item">
+            <div class="client-avatar" style="background:#a855f7">C</div>
+            <div class="recent-client-info">
+              <strong>Carlos Ruiz</strong>
+              <span>carlos@email.com</span>
+            </div>
+            <span class="tag tag-green">Activo</span>
+          </div>
+          <div class="recent-client-item">
+            <div class="client-avatar" style="background:#f59e0b">L</div>
+            <div class="recent-client-info">
+              <strong>Lucía Torres</strong>
+              <span>lucia@email.com</span>
+            </div>
+            <span class="tag tag-yellow">Pendiente</span>
+          </div>
+          <div class="recent-client-item">
+            <div class="client-avatar" style="background:#22c55e">R</div>
+            <div class="recent-client-info">
+              <strong>Roberto Silva</strong>
+              <span>roberto@email.com</span>
+            </div>
+            <span class="tag tag-green">Activo</span>
+          </div>
+          <div class="recent-client-item">
+            <div class="client-avatar" style="background:#ef4444">A</div>
+            <div class="recent-client-info">
+              <strong>Ana Paredes</strong>
+              <span>ana@email.com</span>
+            </div>
+            <span class="tag tag-gray">Inactivo</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.dash-grid-bottom -->
+
+  </main>
+</body>
+</html>
