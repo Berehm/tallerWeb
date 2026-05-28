@@ -777,3 +777,148 @@ svg.donut circle { fill: none; stroke-width: 20; }
     font-weight:600;
 }
 
+/* ═════════════════════════════════════
+   NOSOTROS
+═════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.nosotros-container{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:30px;
+}
+
+.nosotros-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:30px;
+
+  box-shadow:var(--shadow);
+}
+
+.nosotros-card h2{
+
+  font-family:'Poppins', sans-serif;
+
+  font-size:28px;
+
+  margin-bottom:20px;
+
+  color:var(--sidebar-bg);
+}
+
+.nosotros-card p{
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+  font-size:15px;
+}
+
+/* MAPA */
+
+.mapa{
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  box-shadow:var(--shadow);
+}
+
+.mapa iframe{
+
+  width:100%;
+
+  height:100%;
+
+  min-height:350px;
+
+  border:none;
+}
+
+/* FORMULARIO */
+
+.contacto-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.contacto-form input,
+.contacto-form textarea{
+
+  padding:15px;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  outline:none;
+
+  transition:.3s;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus{
+
+  border-color:var(--blue);
+
+  transform:scale(1.02);
+
+  box-shadow:0 0 10px rgba(59,130,246,.2);
+}
+
+.contacto-form textarea{
+
+  resize:none;
+
+  min-height:130px;
+}
+
+.contacto-form button{
+
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+
+  border:none;
+
+  padding:15px;
+
+  border-radius:14px;
+
+  color:white;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.contacto-form button:hover{
+
+  transform:translateY(-3px);
+
+  opacity:.9;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .nosotros-container{
+
+    grid-template-columns:1fr;
+  }
+}
