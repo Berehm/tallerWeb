@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<head>
 <script>
 
-const login = localStorage.getItem("login");
+const sesion = localStorage.getItem("login");
 
-if(login !== "true"){
+if(sesion !== "true"){
     window.location.href = "./Admin/login.html";
 }
 
 </script>
-<head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imprenta e Imagina – Dashboard</title>

@@ -7,10 +7,10 @@ function login() {
     if (usuario === 'admin' && password === '1234') {
 
         // GUARDAR SESIÓN
-        localStorage.setItem("login", "true");
+       localStorage.setItem("login", "true");
 
         // IR AL DASHBOARD
-        window.location.href = '../index.html';
+     window.location.href = "../index.html";
 
     } else {
 
