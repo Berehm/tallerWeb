@@ -22,3 +22,36 @@ function login() {
 document.addEventListener('keydown', e => {
     if (e.key === 'Enter') login();
 });
+
+
+const abrirModal = document.getElementById('abrirModal');
+
+const cerrarModal = document.getElementById('cerrarModal');
+
+const modal = document.getElementById('modalProducto');
+
+
+if(abrirModal && modal){
+
+    abrirModal.addEventListener('click', ()=>{
+
+        modal.classList.add('activo');
+
+    });
+
+}
+
+
+if(cerrarModal && modal){
+
+    cerrarModal.addEventListener('click', ()=>{
+
+        modal.classList.remove('activo');
+
+    });
+
+}
+
+
+
+

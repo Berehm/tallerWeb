@@ -105,15 +105,30 @@
       </div>
     </section>
 
-    <!-- TOOLBAR -->
-    <div class="toolbar">
-      <div class="search-wrap">
-        <span class="search-icon"></span>
-        <input type="text" placeholder="Buscar producto por nombre o código..." />
-      </div>
-      <button class="btn-filter"> Filtros</button>
-      <button class="btn-primary">＋ Nuevo producto</button>
-    </div>
+    
+<!-- TOOLBAR -->
+<div class="toolbar">
+
+  <div class="search-wrap">
+    <span class="search-icon"></span>
+
+    <input 
+      type="text" 
+      placeholder="Buscar producto por nombre o código..." 
+    />
+  </div>
+
+  <button class="btn-filter">
+    Filtros
+  </button>
+
+  <!-- BOTON NUEVO PRODUCTO -->
+  <button class="btn-primary" id="abrirModal">
+    ＋ Nuevo producto
+  </button>
+
+</div>
+
 
     <!-- TABLE -->
     <div class="table-wrap">
@@ -227,8 +242,59 @@
 
   </main>
 
-  <script src="../js/app.js" defer></script>
-  <script src="../js/pages/productos.js" defer></script>
 
+<!-- MODAL NUEVO PRODUCTO -->
+
+<div class="modal" id="modalProducto">
+
+    <div class="modal-contenido">
+
+        <div class="modal-header">
+
+            <h2>Nuevo Producto</h2>
+
+            <button id="cerrarModal">
+                ✕
+            </button>
+
+        </div>
+
+        <form class="form-producto">
+
+            <div class="grupo">
+                <label>Nombre del producto</label>
+                <input type="text" placeholder="Ej: Cuaderno Standford">
+            </div>
+
+            <div class="grupo">
+                <label>Categoría</label>
+
+                <select>
+                    <option>Cuadernos</option>
+                    <option>Escritura</option>
+                    <option>Oficina</option>
+                    <option>Papel</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label>Precio</label>
+                <input type="number" placeholder="S/ 0.00">
+            </div>
+
+            <div class="grupo">
+                <label>Stock</label>
+                <input type="number" placeholder="0">
+            </div>
+
+            <button class="btn-guardar">
+                Guardar producto
+            </button>
+
+        </form>
+
+    </div>
+</div>
+    <script src="../js/app.js" defer></script>
 </body>
 </html>
