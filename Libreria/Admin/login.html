@@ -283,5 +283,27 @@
        </div>
   </div>
   <script src="../js/app.js"></script>
-</body>
+
+<script>
+
+function login(){
+
+    let usuario = document.getElementById("usuario").value;
+    let password = document.getElementById("password").value;
+    let errorMsg = document.getElementById("errorMsg");
+
+    if(usuario === "admin" && password === "1234"){
+
+        localStorage.setItem("login", "true");
+
+        window.location.href = "../index.html";
+
+    }else{
+
+        errorMsg.classList.add("show");
+
+    }
+}
+
+</script>
 </html>

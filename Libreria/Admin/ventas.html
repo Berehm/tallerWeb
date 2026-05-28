@@ -1,30 +1,442 @@
 <!DOCTYPE html>
 <html lang="es">
+<script>
+  const login = localStorage.getItem("login");
+  if(login !== "true") window.location.href = "./login.html";
+</script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprenta e Imagina – Ventas</title>
+  <link rel="stylesheet" href="../css/global.css" />
 </head>
 <body>
-<h2>Ventas</h2>
-<p class="subtitle">Historial de ventas</p>
 
-<div class="card">
-  <table>
-    <tr>
-      <th>Cliente</th>
-      <th>Libro</th>
-      <th>Total</th>
-      <th>Estado</th>
-    </tr>
-    <tr>
-      <td>Juan</td>
-      <td>Libro X</td>
-      <td>S/ 80</td>
-      <td>Pagado</td>
-    </tr>
-  </table>
-</div> 
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div class="brand-text">
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="../index.html"       class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+      <a href="productos.html"         class="nav-item"><span class="nav-icon"></span> Productos</a>
+      <a href="clientes.html"          class="nav-item"><span class="nav-icon"></span> Clientes</a>
+      <a href="ventas.html"            class="nav-item active"><span class="nav-icon"></span> Ventas</a>
+      <a href="inventario.html"        class="nav-item"><span class="nav-icon"></span> Inventario</a>
+    </nav>
+    <div class="sidebar-quick">
+      <p class="quick-title">Accesos rápidos</p>
+      <a href="productos.html" class="quick-link"><span>＋</span> Nuevo producto</a>
+      <a href="#" class="quick-link"><span>🏷</span> Categorías</a>
+      <a href="#" class="quick-link"><span>🚚</span> Proveedores</a>
+      <a href="#" class="quick-link"><span>⬆</span> Importar productos</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="brand-icon"></div>
+      <div>
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+    <p class="sidebar-copy">© 2025 Todos los derechos reservados</p>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="page-title">
+        <div class="page-title-icon"></div>
+        <div>
+          <h1>Ventas</h1>
+          <p>Gestión de ventas y transacciones</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="date-badge">📅 Abril 2025</div>
+        <button class="notif-btn">🔔<span class="badge">3</span></button>
+        <div class="admin-info">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Admin</strong>
+            <span>Administrador</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon blue"></div>
+        <div>
+          <p class="stat-label">Ventas hoy</p>
+          <strong class="stat-value">S/ 1,240</strong>
+          <span class="stat-sub">↑ 12% vs ayer</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"></div>
+        <div>
+          <p class="stat-label">Total del mes</p>
+          <strong class="stat-value">S/ 18,450</strong>
+          <span class="stat-sub">↑ 8% vs mes anterior</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon yellow"></div>
+        <div>
+          <p class="stat-label">Pedidos pendientes</p>
+          <strong class="stat-value">14</strong>
+          <span class="stat-sub">↓ Requieren atención</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon purple"></div>
+        <div>
+          <p class="stat-label">Ticket promedio</p>
+          <strong class="stat-value">S/ 48.05</strong>
+          <span class="stat-sub">↑ 3% esta semana</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ventas-layout">
+
+      <!-- TABLA -->
+      <div>
+        <div class="toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Buscar por cliente, N° orden o producto..." />
+          </div>
+          <button class="btn-filter">Estado ▾</button>
+          <button class="btn-filter">Método ▾</button>
+          <button class="btn-primary btn-secondary">⬇ Exportar</button>
+          <button class="btn-primary">＋ Nueva venta</button>
+        </div>
+
+        <div class="table-wrap" style="margin-top:16px;">
+          <div style="padding:0 16px;">
+            <div class="tabs">
+              <button class="tab active">Todas <span class="tab-count">384</span></button>
+              <button class="tab">Completadas <span class="tab-count">341</span></button>
+              <button class="tab">Pendientes <span class="tab-count">14</span></button>
+              <button class="tab">Canceladas <span class="tab-count">29</span></button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>N° Orden</th>
+                <th>Cliente</th>
+                <th>Productos</th>
+                <th>Método</th>
+                <th>Total</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="col-code">#ORD-0384</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#3b82f6">M</div>
+                    <div>
+                      <strong>María García</strong>
+                      <span class="sub-text">DNI: 45782341</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Cuadernos x3, Lapiceros x5<br><span class="sub-text">3 productos</span></td>
+                <td><span class="pay-badge">💵 Efectivo</span></td>
+                <td><strong>S/ 29.50</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+                <td><span class="sub-text">Hoy, 10:32 am</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0383</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#a855f7">C</div>
+                    <div>
+                      <strong>Carlos Ruiz</strong>
+                      <span class="sub-text">DNI: 38291047</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Resmas A4 x2, Folder x10<br><span class="sub-text">2 productos</span></td>
+                <td><span class="pay-badge">📱 Yape / Plin</span></td>
+                <td><strong>S/ 45.00</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+                <td><span class="sub-text">Hoy, 09:48 am</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0382</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#f59e0b">L</div>
+                    <div>
+                      <strong>Lucía Torres</strong>
+                      <span class="sub-text">DNI: 72901834</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Impresión A4 x50<br><span class="sub-text">1 producto</span></td>
+                <td><span class="pay-badge">💳 Tarjeta</span></td>
+                <td><strong>S/ 15.00</strong></td>
+                <td><span class="status status-yellow">Pendiente</span></td>
+                <td><span class="sub-text">Hoy, 09:05 am</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0381</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#22c55e">R</div>
+                    <div>
+                      <strong>Roberto Silva</strong>
+                      <span class="sub-text">DNI: 61038274</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Engrapadora x1, Goma x2<br><span class="sub-text">2 productos</span></td>
+                <td><span class="pay-badge">📱 Yape / Plin</span></td>
+                <td><strong>S/ 21.00</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+                <td><span class="sub-text">Hoy, 08:17 am</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0380</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#ef4444">A</div>
+                    <div>
+                      <strong>Ana Paredes</strong>
+                      <span class="sub-text">DNI: 53827104</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Cuaderno espiral x2<br><span class="sub-text">1 producto</span></td>
+                <td><span class="pay-badge">💵 Efectivo</span></td>
+                <td><strong>S/ 11.00</strong></td>
+                <td><span class="status status-red">Cancelado</span></td>
+                <td><span class="sub-text">Ayer, 05:50 pm</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn del">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0379</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#06b6d4">J</div>
+                    <div>
+                      <strong>Jorge Mendoza</strong>
+                      <span class="sub-text">RUC: 20482736191</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Millar papel bond, Tóner HP<br><span class="sub-text">2 productos</span></td>
+                <td><span class="pay-badge">🏦 Transferencia</span></td>
+                <td><strong>S/ 185.00</strong></td>
+                <td><span class="status status-blue">En proceso</span></td>
+                <td><span class="sub-text">Ayer, 03:22 pm</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="col-code">#ORD-0378</span></td>
+                <td>
+                  <div class="client-cell">
+                    <div class="client-avatar" style="background:#14b8a6">S</div>
+                    <div>
+                      <strong>Sofía Castro</strong>
+                      <span class="sub-text">DNI: 48291736</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Agenda 2025 x1, Post-it x3<br><span class="sub-text">2 productos</span></td>
+                <td><span class="pay-badge">📱 Yape / Plin</span></td>
+                <td><strong>S/ 38.50</strong></td>
+                <td><span class="status status-green">Completado</span></td>
+                <td><span class="sub-text">Ayer, 11:10 am</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">🖨</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="padding:14px 16px;border-top:1px solid var(--border);">
+            <div class="pagination">
+              <span class="pag-info">Mostrando 1–7 de 384 ventas</span>
+              <div class="pag-controls">
+                <button class="pag-btn">‹</button>
+                <button class="pag-btn active">1</button>
+                <button class="pag-btn">2</button>
+                <button class="pag-btn">3</button>
+                <button class="pag-btn">…</button>
+                <button class="pag-btn">55</button>
+                <button class="pag-btn">›</button>
+              </div>
+              <div class="pag-size">
+                <select>
+                  <option>7 por página</option>
+                  <option>15 por página</option>
+                  <option>25 por página</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL DERECHO -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Resumen del mes</p>
+              <p class="card-subtitle">Abril 2025</p>
+            </div>
+          </div>
+          <div class="summary-row"><span>Total facturado</span><span class="val" style="color:var(--green-dark)">S/ 18,450</span></div>
+          <div class="summary-row"><span>Transacciones</span><span class="val">384</span></div>
+          <div class="summary-row"><span>Ticket promedio</span><span class="val">S/ 48.05</span></div>
+          <div class="summary-row"><span>Canceladas</span><span class="val" style="color:var(--red-dark)">S/ 210.00</span></div>
+          <div class="summary-row"><span>Pendientes de cobro</span><span class="val" style="color:var(--yellow-dark)">S/ 645.00</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Métodos de pago</p>
+              <p class="card-subtitle">Distribución del mes</p>
+            </div>
+          </div>
+          <div class="donut-wrap">
+            <svg class="donut" width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="36" stroke="#3b82f6" stroke-dasharray="90.5 136" stroke-dashoffset="0"/>
+              <circle cx="50" cy="50" r="36" stroke="#22c55e" stroke-dasharray="67.9 158" stroke-dashoffset="-90.5"/>
+              <circle cx="50" cy="50" r="36" stroke="#f59e0b" stroke-dasharray="40.7 186" stroke-dashoffset="-158.4"/>
+              <circle cx="50" cy="50" r="36" stroke="#a855f7" stroke-dasharray="27.1 199" stroke-dashoffset="-199.1"/>
+            </svg>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>Yape / Plin<span class="legend-amount">40% — S/ 7,380</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Efectivo<span class="legend-amount">30% — S/ 5,535</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Tarjeta<span class="legend-amount">18% — S/ 3,321</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#a855f7"></div>Transferencia<span class="legend-amount">12% — S/ 2,214</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Top clientes</p>
+              <p class="card-subtitle">Mayor gasto del mes</p>
+            </div>
+            <a href="clientes.html" class="card-link">Ver todos →</a>
+          </div>
+          <div class="top-item">
+            <div class="top-rank">1</div>
+            <div class="top-info">
+              <strong>Jorge Mendoza</strong><span>45 compras</span>
+              <div class="bar-track"><div class="bar-fill" style="width:100%;background:#3b82f6"></div></div>
+            </div>
+            <span class="top-amount">S/ 1,850</span>
+          </div>
+          <div class="top-item">
+            <div class="top-rank">2</div>
+            <div class="top-info">
+              <strong>Roberto Silva</strong><span>31 compras</span>
+              <div class="bar-track"><div class="bar-fill" style="width:68%;background:#22c55e"></div></div>
+            </div>
+            <span class="top-amount">S/ 720</span>
+          </div>
+          <div class="top-item">
+            <div class="top-rank">3</div>
+            <div class="top-info">
+              <strong>María García</strong><span>24 compras</span>
+              <div class="bar-track"><div class="bar-fill" style="width:52%;background:#f59e0b"></div></div>
+            </div>
+            <span class="top-amount">S/ 480</span>
+          </div>
+          <div class="top-item">
+            <div class="top-rank">4</div>
+            <div class="top-info">
+              <strong>Carlos Ruiz</strong><span>18 compras</span>
+              <div class="bar-track"><div class="bar-fill" style="width:38%;background:#a855f7"></div></div>
+            </div>
+            <span class="top-amount">S/ 312</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tab.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+    document.querySelectorAll('.pag-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(['‹','›','…'].includes(btn.textContent.trim())) return;
+        btn.closest('.pag-controls').querySelectorAll('.pag-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>

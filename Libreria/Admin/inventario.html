@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<script>
+  const login = localStorage.getItem("login");
+  if(login !== "true") window.location.href = "./login.html";
+</script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprenta e Imagina – Inventario</title>
+  <link rel="stylesheet" href="../css/global.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div class="brand-text">
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="../index.html"    class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+      <a href="productos.html"      class="nav-item"><span class="nav-icon"></span> Productos</a>
+      <a href="clientes.html"       class="nav-item"><span class="nav-icon"></span> Clientes</a>
+      <a href="ventas.html"         class="nav-item"><span class="nav-icon"></span> Ventas</a>
+      <a href="inventario.html"     class="nav-item active"><span class="nav-icon"></span> Inventario</a>
+    </nav>
+    <div class="sidebar-quick">
+      <p class="quick-title">Accesos rápidos</p>
+      <a href="productos.html" class="quick-link"><span>＋</span> Nuevo producto</a>
+      <a href="#" class="quick-link"><span>🏷</span> Categorías</a>
+      <a href="#" class="quick-link"><span>🚚</span> Proveedores</a>
+      <a href="#" class="quick-link"><span>⬆</span> Importar productos</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="brand-icon"></div>
+      <div>
+        <strong>Imprenta e <em>Imagina</em></strong>
+        <span>Librería &amp; Imprenta</span>
+      </div>
+    </div>
+    <p class="sidebar-copy">© 2025 Todos los derechos reservados</p>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="page-title">
+        <div class="page-title-icon"></div>
+        <div>
+          <h1>Inventario</h1>
+          <p>Control de stock y existencias</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="date-badge">📅 Abril 2025</div>
+        <button class="notif-btn">🔔<span class="badge">3</span></button>
+        <div class="admin-info">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Admin</strong>
+            <span>Administrador</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-icon blue"></div>
+        <div>
+          <p class="stat-label">Total productos</p>
+          <strong class="stat-value">248</strong>
+          <span class="stat-sub">En 6 categorías</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon yellow"></div>
+        <div>
+          <p class="stat-label">Stock bajo</p>
+          <strong class="stat-value">18</strong>
+          <span class="stat-sub">Por debajo del mínimo</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red"></div>
+        <div>
+          <p class="stat-label">Sin stock</p>
+          <strong class="stat-value">10</strong>
+          <span class="stat-sub">Requieren reposición</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"></div>
+        <div>
+          <p class="stat-label">Valor del inventario</p>
+          <strong class="stat-value">S/ 24,380</strong>
+          <span class="stat-sub">Costo total en stock</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ventas-layout">
+
+      <!-- TABLA -->
+      <div>
+        <div class="toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Buscar producto por nombre o código..." />
+          </div>
+          <button class="btn-filter">Categoría ▾</button>
+          <button class="btn-filter">Stock ▾</button>
+          <button class="btn-primary btn-secondary">⬇ Exportar</button>
+          <button class="btn-primary">＋ Ajuste de stock</button>
+        </div>
+
+        <div class="table-wrap" style="margin-top:16px;">
+          <div style="padding:0 16px;">
+            <div class="tabs">
+              <button class="tab active">Todos <span class="tab-count">248</span></button>
+              <button class="tab">Normal <span class="tab-count">220</span></button>
+              <button class="tab">Stock bajo <span class="tab-count">18</span></button>
+              <button class="tab">Sin stock <span class="tab-count">10</span></button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Stock actual</th>
+                <th>Mínimo</th>
+                <th>Nivel</th>
+                <th>P. Costo</th>
+                <th>P. Venta</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">📓</span>
+                    <div>
+                      <strong>Cuaderno A4 cuadriculado</strong>
+                      <span class="sub-text col-code">COD-0021</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-blue">Cuadernos</span></td>
+                <td><strong>142</strong></td>
+                <td><span class="sub-text">20</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:90%;background:#22c55e"></div>
+                  </div>
+                </td>
+                <td>S/ 2.50</td>
+                <td>S/ 4.50</td>
+                <td><span class="status status-green">Normal</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">🖨</span>
+                    <div>
+                      <strong>Resma papel bond A4 75g</strong>
+                      <span class="sub-text col-code">COD-0008</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-purple">Papel</span></td>
+                <td><strong>55</strong></td>
+                <td><span class="sub-text">30</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:65%;background:#22c55e"></div>
+                  </div>
+                </td>
+                <td>S/ 12.00</td>
+                <td>S/ 18.00</td>
+                <td><span class="status status-green">Normal</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">🖊</span>
+                    <div>
+                      <strong>Lapicero azul Faber-Castell</strong>
+                      <span class="sub-text col-code">COD-0003</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-yellow">Útiles</span></td>
+                <td><strong>14</strong></td>
+                <td><span class="sub-text">50</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:18%;background:#f59e0b"></div>
+                  </div>
+                </td>
+                <td>S/ 0.80</td>
+                <td>S/ 1.50</td>
+                <td><span class="status status-yellow">Stock bajo</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">🖨</span>
+                    <div>
+                      <strong>Tóner HP 85A negro</strong>
+                      <span class="sub-text col-code">COD-0047</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-gray">Imprenta</span></td>
+                <td><strong>0</strong></td>
+                <td><span class="sub-text">5</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:0%;background:#ef4444"></div>
+                  </div>
+                </td>
+                <td>S/ 85.00</td>
+                <td>S/ 120.00</td>
+                <td><span class="status status-red">Sin stock</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">📁</span>
+                    <div>
+                      <strong>Folder manila A4</strong>
+                      <span class="sub-text col-code">COD-0015</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-yellow">Útiles</span></td>
+                <td><strong>8</strong></td>
+                <td><span class="sub-text">25</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:22%;background:#f59e0b"></div>
+                  </div>
+                </td>
+                <td>S/ 0.30</td>
+                <td>S/ 0.70</td>
+                <td><span class="status status-yellow">Stock bajo</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">✂️</span>
+                    <div>
+                      <strong>Tijera escolar punta roma</strong>
+                      <span class="sub-text col-code">COD-0031</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-yellow">Útiles</span></td>
+                <td><strong>37</strong></td>
+                <td><span class="sub-text">10</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:75%;background:#22c55e"></div>
+                  </div>
+                </td>
+                <td>S/ 2.00</td>
+                <td>S/ 4.00</td>
+                <td><span class="status status-green">Normal</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn">⋯</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cell-with-thumb">
+                    <span class="cell-thumb">📌</span>
+                    <div>
+                      <strong>Cinta adhesiva transparente</strong>
+                      <span class="sub-text col-code">COD-0012</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="tag tag-yellow">Útiles</span></td>
+                <td><strong>0</strong></td>
+                <td><span class="sub-text">15</span></td>
+                <td>
+                  <div class="stock-bar">
+                    <div class="stock-fill" style="width:0%;background:#ef4444"></div>
+                  </div>
+                </td>
+                <td>S/ 1.20</td>
+                <td>S/ 2.50</td>
+                <td><span class="status status-red">Sin stock</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="act-btn view">👁</button>
+                    <button class="act-btn edit">✏️</button>
+                    <button class="act-btn del">🗑</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="padding:14px 16px;border-top:1px solid var(--border);">
+            <div class="pagination">
+              <span class="pag-info">Mostrando 1–7 de 248 productos</span>
+              <div class="pag-controls">
+                <button class="pag-btn">‹</button>
+                <button class="pag-btn active">1</button>
+                <button class="pag-btn">2</button>
+                <button class="pag-btn">3</button>
+                <button class="pag-btn">…</button>
+                <button class="pag-btn">36</button>
+                <button class="pag-btn">›</button>
+              </div>
+              <div class="pag-size">
+                <select>
+                  <option>7 por página</option>
+                  <option>15 por página</option>
+                  <option>25 por página</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL DERECHO -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+
+        <!-- Alertas de reposición -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Alertas de reposición</p>
+              <p class="card-subtitle">Requieren atención inmediata</p>
+            </div>
+            <span class="tag tag-red">28</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-icon" style="background:rgba(239,68,68,0.1)">🖨</div>
+            <div class="alert-info">
+              <strong>Tóner HP 85A</strong>
+              <span>Sin stock — pedir mín. 5</span>
+            </div>
+            <span class="alert-stock" style="color:var(--red-dark)">0 uds</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-icon" style="background:rgba(239,68,68,0.1)">📌</div>
+            <div class="alert-info">
+              <strong>Cinta adhesiva</strong>
+              <span>Sin stock — pedir mín. 15</span>
+            </div>
+            <span class="alert-stock" style="color:var(--red-dark)">0 uds</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-icon" style="background:rgba(245,158,11,0.1)">🖊</div>
+            <div class="alert-info">
+              <strong>Lapicero azul F-C</strong>
+              <span>Stock bajo — mín. 50</span>
+            </div>
+            <span class="alert-stock" style="color:var(--yellow-dark)">14 uds</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-icon" style="background:rgba(245,158,11,0.1)">📁</div>
+            <div class="alert-info">
+              <strong>Folder manila A4</strong>
+              <span>Stock bajo — mín. 25</span>
+            </div>
+            <span class="alert-stock" style="color:var(--yellow-dark)">8 uds</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-icon" style="background:rgba(245,158,11,0.1)">📎</div>
+            <div class="alert-info">
+              <strong>Clips metálicos x100</strong>
+              <span>Stock bajo — mín. 20</span>
+            </div>
+            <span class="alert-stock" style="color:var(--yellow-dark)">6 uds</span>
+          </div>
+        </div>
+
+        <!-- Por categoría -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-title">Por categoría</p>
+              <p class="card-subtitle">Distribución del inventario</p>
+            </div>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#3b82f6"></div>Útiles escolares</div>
+            <span class="cat-count">98 productos</span>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#a855f7"></div>Papel y resmas</div>
+            <span class="cat-count">42 productos</span>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#f59e0b"></div>Cuadernos</div>
+            <span class="cat-count">38 productos</span>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#22c55e"></div>Archivadores</div>
+            <span class="cat-count">31 productos</span>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#ef4444"></div>Imprenta</div>
+            <span class="cat-count">24 productos</span>
+          </div>
+          <div class="cat-item">
+            <div class="cat-name"><div class="cat-dot" style="background:#6b7280"></div>Otros</div>
+            <span class="cat-count">15 productos</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tab.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+    document.querySelectorAll('.pag-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(['‹','›','…'].includes(btn.textContent.trim())) return;
+        btn.closest('.pag-controls').querySelectorAll('.pag-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

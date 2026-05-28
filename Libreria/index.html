@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+<script>
+
+const login = localStorage.getItem("login");
+
+if(login !== "true"){
+    window.location.href = "./Admin/login.html";
+}
+
+</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imprenta e Imagina – Dashboard</title>
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
+  
 </head>
 <body>
 
@@ -24,15 +34,13 @@
       <a href="../Libreria/Admin/productos.html"   class="nav-item"><span class="nav-icon"></span> Productos</a>
       <a href="../Libreria/Admin/clientes.html"    class="nav-item"><span class="nav-icon"></span> Clientes</a>
       <a href="../Libreria/Admin/ventas.html"      class="nav-item"><span class="nav-icon"></span> Ventas</a>
-      <a href="../Libreria/Admin/reportes.html"    class="nav-item"><span class="nav-icon"></span> Reportes</a>
       <a href="../Libreria/Admin/inventario.html"  class="nav-item"><span class="nav-icon"></span> Inventario</a>
-      <a href="../Libreria/Admin//configuracion.html" class="nav-item"><span class="nav-icon"></span> Configuración</a>
-      
+     
     </nav>
 
     <div class="sidebar-quick">
       <p class="quick-title">Accesos rápidos</p>
-      <a href="pages/productos.html" class="quick-link"><span>＋</span> Nuevo producto</a>
+      <a href="../Libreria/Admin/productos.html" class="quick-link"><span>＋</span> Nuevo producto</a>
       <a href="#" class="quick-link"><span></span> Categorías</a>
       <a href="#" class="quick-link"><span></span> Proveedores</a>
       <a href="#" class="quick-link"><span>⬆</span> Importar productos</a>
@@ -133,6 +141,7 @@
           </div>
           <a href="../Libreria/Admin/ventas.html" class="card-link">Ver todas →</a>
         </div>
+        
         <div class="table-wrap">
           <table>
             <thead>
@@ -220,4 +229,6 @@
       </div>
   </main>
 </body>
+
+<script src="./js/app.js"></script>
 </html>
